@@ -6,6 +6,11 @@ html, body {
     flex-direction: column;
 }
 
+.form-container{
+    padding-top: 100px;
+
+}
+
 main {
     flex: 1;
 }
