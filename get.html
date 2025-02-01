@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET Example</title>
+</head>
+<body>
+
+    <h2>GET Method (Data in URL)</h2>
+    <form action="" method="get" onsubmit="handleGet(event)">
+        <label for="nameGet">Enter Name:</label>
+        <input type="text" id="nameGet" name="name">
+        <button type="submit">Submit (GET)</button>
+    </form>
+
+    <h3>Result:</h3>
+    <p id="output"></p>
+
+    <script>
+        function handleGet(event) {
+            event.preventDefault(); // Prevents page refresh
+            const urlParams = new URLSearchParams(new FormData(event.target));
+            document.getElementById("output").innerText = "GET Data: " + urlParams.toString();
+            history.pushState({}, "", "?" + urlParams.toString()); // Simulate GET in URL
+        }
+    </script>
+
+</body>
+</html>

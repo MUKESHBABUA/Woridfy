@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST Example</title>
+</head>
+<body>
+
+    <h2>POST Method (Simulated)</h2>
+    <form onsubmit="handlePost(event)">
+        <label for="namePost">Enter Name:</label>
+        <input type="text" id="namePost" name="name">
+        <button type="submit">Submit (POST)</button>
+    </form>
+
+    <h3>Result:</h3>
+    <p id="output"></p>
+
+    <script>
+        function handlePost(event) {
+            event.preventDefault(); // Prevents page refresh
+            const formData = new FormData(event.target);
+            let result = "";
+            for (let [key, value] of formData.entries()) {
+                result += `${key}: ${value} `;
+            }
+            document.getElementById("output").innerText = "POST Data: " + result;
+        }
+    </script>
+
+</body>
+</html>
