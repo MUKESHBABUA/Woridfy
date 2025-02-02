@@ -22,7 +22,8 @@
         function handleGet(event) {
             event.preventDefault(); 
             const urlParams = new URLSearchParams(new FormData(event.target));
-            document.getElementById("output").innerText = "GET Data: " + urlParams.toString();
+            const name = urlParams.get("name"); 
+            document.getElementById("output").innerText = "GET Data: " + name;
             history.pushState({}, "", "?" + urlParams.toString()); 
         }
     </script>
