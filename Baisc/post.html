@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POST Example</title>
 </head>
+<Center>
 <body>
 
-    <h2>POST Method (Simulated)</h2>
+    <h2>POST Method</h2>
     <form onsubmit="handlePost(event)">
         <label for="namePost">Enter Name:</label>
         <input type="text" id="namePost" name="name">
@@ -23,11 +24,13 @@
             const formData = new FormData(event.target);
             let result = "";
             for (let [key, value] of formData.entries()) {
-                result += `${key}: ${value} `;
+                result += ` ${value} `;
             }
             document.getElementById("output").innerText = "POST Data: " + result;
         }
     </script>
 
 </body>
+</Center>
+
 </html>
